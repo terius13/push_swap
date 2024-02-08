@@ -6,8 +6,13 @@
 #    By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 11:09:54 by ting              #+#    #+#              #
-#    Updated: 2024/01/22 11:10:07 by ting             ###   ########.fr        #
+#    Updated: 2024/02/08 13:42:02 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+FLAGS = -Wall -Wextra -Werror
 
+LIBFT = ./libft/libft.a
+
+$(LIBFT):
+	@$(MAKE) -C libft

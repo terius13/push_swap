@@ -1,29 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   error_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/02/08 13:29:51 by ting             ###   ########.fr       */
+/*   Created: 2024/02/08 13:32:11 by ting              #+#    #+#             */
+/*   Updated: 2024/02/08 13:32:16 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
 
-# include <stdlib.h>
-# include <stdio.h>
-
-typedef struct	s_stack
-{
-	int	data;
-	struct s_stack	*next;
-}	t_stack;
-
-//alloc_stacka.c
-t_stack		*if_string(char *str);
-t_stack		*allocate_stack_a(int argc, char **argv);
-
-#endif
