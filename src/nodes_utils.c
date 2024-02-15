@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msg.c                                        :+:      :+:    :+:   */
+/*   nodes_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 13:32:11 by ting              #+#    #+#             */
-/*   Updated: 2024/02/15 13:02:18 by ting             ###   ########.fr       */
+/*   Created: 2024/02/15 17:13:03 by ting              #+#    #+#             */
+/*   Updated: 2024/02/15 17:20:51 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "../includes/push_swap.h"
-#include <stdlib.h>
-void	ft_error_msg(void)
+
+t_stack	*new_node(int num)
 {
-	perror("Error");
-	exit(1);
+	t_stack	*new;
+
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	(*new).data = num;
+	(*new).next = NULL;
+	return (new);
 }
