@@ -6,11 +6,12 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-/*   Updated: 2024/02/08 13:37:54 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/09 14:27:35 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include ../includes/"push_swap.h"
+#include <stdlib.h>
 
 t_stack		*if_string(char *str)
 {
@@ -20,7 +21,7 @@ t_stack		*if_string(char *str)
 
 	i = 0;
 	strs = ft_split(str, ' ');
-	while (str[i] != NULL)
+	while (str[i] != '\0')
 	{
 		ft_lstadd_back(stack_a,ft_lstnew(ft_atoi(str[i])));
 	}
@@ -35,7 +36,7 @@ t_stack		*allocate_stack_a(int argc, char **argv)
 	i = 1;
 	if (argc < 2)
 	{
-		return (error_msg());
+		ft_error_msg();
 	}
 	else if (argc == 2)
 	{

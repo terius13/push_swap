@@ -6,8 +6,13 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 13:32:11 by ting              #+#    #+#             */
-/*   Updated: 2024/02/08 13:32:16 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/09 14:28:05 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
+#include ../includes/"push.swap.h"
+#include <stdlib.h>
+void	ft_error_msg(void)
+{
+	perror("Error");
+	exit(1);
+}

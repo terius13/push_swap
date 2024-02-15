@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/02/08 13:29:51 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/09 14:26:27 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ typedef struct	s_stack
 //alloc_stacka.c
 t_stack		*if_string(char *str);
 t_stack		*allocate_stack_a(int argc, char **argv);
+
+//error_msg.c
+void	ft_error_msg(void);
 
 #endif
