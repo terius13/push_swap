@@ -6,7 +6,7 @@
 #    By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 11:09:54 by ting              #+#    #+#              #
-#    Updated: 2024/02/16 17:06:07 by ting             ###   ########.fr        #
+#    Updated: 2024/02/17 18:04:43 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,10 @@ LIBFT = libft/libft.a
 
 SRC_PATH = src/
 
-SRC = alloc_stacka.c checker.c \
+SRC = alloc_stacka.c push_swap.c \
       error_msg.c nodes_utils.c \
+      swap_oper.c push_oper.c \
+
 
 OBJ = $(addprefix $(SRC_PATH), $(SRC:.c=.o))
 
