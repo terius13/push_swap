@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-/*   Updated: 2024/02/16 14:05:36 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/17 15:40:03 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 t_stack		*if_string(char *str)
 {
-	t_stack	**stack_a = NULL;
+	t_stack	**stack_a;
 	char	**strs;
 	int	i;
 	int	num;
 
 	i = 0;
+	stack_a = (t_stack **)malloc(sizeof(t_stack *));
+	if (!stack_a)
+		return (NULL);
 	strs = ft_split(str, ' ');
 	while (strs[i] != NULL)
 	{
@@ -30,30 +33,33 @@ t_stack		*if_string(char *str)
 	return (*stack_a);
 }
 
-t_stack		*allocate_stack_a(int argc, char **argv)
+t_stack		**allocate_stack_a(int count, char **argv)
 {
-	t_stack **stack_a = NULL;
+	t_stack **stack_a;
 	int	i;
 	int	num;
 
 	i = 1;
-	if (argc < 2)
+	stack_a = (t_stack **)malloc(sizeof(t_stack *));
+	if (!stack_a)
+		return(NULL);
+	if (count < 2)
 	{
 		ft_error_msg();
 	}
-	else if (argc == 2)
+	else if (count == 2)
 	{
 		*stack_a = if_string(argv[1]);
 	}
-	else if (argc > 2)
+	else if (count > 2)
 	{
-		while (i < argc)
+		while (i < count)
 		{
 			num = ft_atoi(argv[i]);
 			add_node_bottom(stack_a, new_node(num));
 			i++;
 		}
 	}
-	return (*stack_a);
+	return (stack_a);
 }
 
