@@ -6,7 +6,7 @@
 #    By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 11:09:54 by ting              #+#    #+#              #
-#    Updated: 2024/02/15 15:34:12 by ting             ###   ########.fr        #
+#    Updated: 2024/02/16 17:06:07 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,21 +14,24 @@ NAME = push_swap
 
 FLAGS = -Wall -Wextra -Werror
 
-LIBFT = ./libft/libft.a
+LIBFT = libft/libft.a
 
-SRC = src/alloc_stacka.c src/checker.c \
-      src/error_msg.c src/push_swap.c \
+SRC_PATH = src/
 
-OBJ = $(SRC:.c=.o)
+SRC = alloc_stacka.c checker.c \
+      error_msg.c nodes_utils.c \
 
-all: $(LIBFT_SRC) $(NAME) 
+OBJ = $(addprefix $(SRC_PATH), $(SRC:.c=.o))
 
-$(LIBFT_SRC):
-	$(MAKE) -C libft
+OBJS_RM = $(SRC:.c=.o)
 
-$(NAME):
-	cc $(FLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJ) $(LIBFT)
+all: $(LIBFT) $(NAME) 
+
+$(LIBFT):
+	$(MAKE) -C ./libft
+
+$(NAME): $(LIBFT_SRC) $(OBJ)
+	cc $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean:
 	$(MAKE) clean -C libft
@@ -37,3 +40,5 @@ clean:
 fclean: clean
 	$(MAKE) fclean -C libft
 	rm -rf $(NAME)
+
+re: fclean all

@@ -6,7 +6,7 @@
 #    By: ting <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 17:33:51 by ting              #+#    #+#              #
-#    Updated: 2023/09/25 19:23:31 by ting             ###   ########.fr        #
+#    Updated: 2023/12/29 12:05:16 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,10 @@ SRC = ft_atoi.c ft_isalpha.c \
       ft_strjoin.c ft_strtrim.c \
       ft_strmapi.c ft_striteri.c \
       ft_split.c ft_itoa.c \
+      ft_printf.c ft_prtchar_printf.c \
+      ft_prthex_printf.c ft_prtnbr_printf.c \
+      ft_prtstr_printf.c ft_prtunnbr_printf.c \
+    
 
 BNS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 	  ft_lstsize_bonus.c ft_lstlast_bonus.c \
@@ -49,17 +53,17 @@ BNS_OBJ = $(BNS_SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJ)
+	@$(CC) $(FLAGS) -c $(SRC)
+	@ar rc $(NAME) $(OBJ)
 
-bonus:  $(NAME)
-	$(CC) $(FLAGS) -c $(BNS_SRC)
-	ar rc $(NAME) $(BNS_OBJ)
+bonus:  @$(NAME)
+	@$(CC) $(FLAGS) -c $(BNS_SRC)
+	@ar rc $(NAME) $(BNS_OBJ)
 
 clean:
-	rm -rf $(OBJ) $(BNS_OBJ)
+	@rm -rf $(OBJ) $(BNS_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all

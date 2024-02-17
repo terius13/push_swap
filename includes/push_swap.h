@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/02/15 17:19:08 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/16 15:37:34 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_stack		*allocate_stack_a(int argc, char **argv);
 
 //nodes_utils.c
 t_stack	*new_node(int num);
+void	add_node_bottom(t_stack **stack, t_stack *new);
 
 //error_msg.c
 void	ft_error_msg(void);
