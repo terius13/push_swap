@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-/*   Updated: 2024/02/18 16:34:10 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/18 21:35:27 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_stack		*if_string(char *str)
 	if (!stack_a)
 		return (NULL);
 	strs = ft_split(str, ' ');
+	checker_argv(strs);
 	while (strs[i] != NULL)
 	{
 		num = ft_atoi(strs[i]);
@@ -53,6 +54,7 @@ t_stack		**allocate_stack_a(int count, char **argv)
 	}
 	else if (count > 2)
 	{
+		checker_argv(&argv[1]);
 		while (i < count)
 		{
 			num = ft_atoi(argv[i]);
@@ -60,7 +62,6 @@ t_stack		**allocate_stack_a(int count, char **argv)
 			i++;
 		}
 	}
-	//check for error here, if number or alpha, use function check_for_error()
 	return (stack_a);
 }
 

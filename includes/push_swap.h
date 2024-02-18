@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/02/18 15:12:04 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/18 21:19:38 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ t_stack		**allocate_stack_a(int count, char **argv);
 t_stack	*new_node(int num);
 void	add_node_bottom(t_stack **stack, t_stack *new);
 
-//error_msg.c
+//check_for_error.c
 void	ft_error_msg(void);
+int	check_for_digit(char **argv);
+void	checker_argv(char **argv);
 
 //swap_oper.c
 void	swap(t_stack *stack);
