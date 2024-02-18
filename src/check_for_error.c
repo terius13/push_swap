@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:28:52 by ting              #+#    #+#             */
-/*   Updated: 2024/02/18 21:40:06 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/18 21:41:33 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	check_for_digit(char **argv)
 	}
 	return (0);
 }
+
+//function to check for duplicates
 
 void	checker_argv(char **argv)
 {
