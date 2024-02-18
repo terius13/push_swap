@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-/*   Updated: 2024/02/17 15:40:03 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/18 16:34:10 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ t_stack		**allocate_stack_a(int count, char **argv)
 			i++;
 		}
 	}
+	//check for error here, if number or alpha, use function check_for_error()
 	return (stack_a);
 }
 

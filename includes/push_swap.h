@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/02/17 18:15:55 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/18 15:12:04 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,17 @@ void	swap_a_and_b(t_stack *stack_a, t_stack *stack_b);
 void	push(t_stack **src, t_stack **dest);
 void	push_a(t_stack **stack_b, t_stack **stack_a);
 void	push_b(t_stack **stack_a, t_stack **stack_b);
+
+//rotate_oper.c
+void	rotate(t_stack **stack);
+void	rotate_a(t_stack **stack_a);
+void	rotate_b(t_stack **stack_b);
+void	rotate_a_and_b(t_stack **stack_b, t_stack **stack_a);
+
+//re_rotate_oper.c
+void	reverse_rotate(t_stack **stack);
+void	re_rotate_a(t_stack **stack_a);
+void	re_rotate_b(t_stack **stack_b);
+void	re_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
 
 #endif
