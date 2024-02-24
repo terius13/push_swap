@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:28:52 by ting              #+#    #+#             */
-/*   Updated: 2024/02/18 21:41:33 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/20 11:55:39 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_error_msg(void)
 	exit(1);
 }
 
-int	check_for_digit(char **argv)
+void	check_for_digit(char **argv)
 {
 	int	i;
 	int	j;
@@ -51,12 +51,29 @@ int	check_for_digit(char **argv)
 		}
 		i++;
 	}
-	return (0);
 }
 
-//function to check for duplicates
+void	check_for_duplicates(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (argv[i] != NULL && argv[i + 1] != NULL)
+	{
+		j = i + 1;
+		while (argv[j] != NULL)
+		{
+			if (ft_strcmp(argv[i], argv[j]) == 0)
+				ft_error_msg();
+			j++;
+		}
+		i++;
+	}
+}
 
 void	checker_argv(char **argv)
 {
 	check_for_digit(argv);
+	check_for_duplicates(argv);
 }
