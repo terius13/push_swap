@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/02/24 19:02:29 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/28 20:57:43 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,22 @@ int	get_stack_size(t_stack *stack_a)
 	return (i);
 }
 
+//i can modify the stack directly by assign another variable, without changing the original sequence of the original stack
+void	assign_pos(t_stack **stack_a)
+{
+	int	pos_num;
+	t_stack	*current;
+
+	current = *stack_a;
+	pos_num = 0;
+	while (current)
+	{
+		current->pos = pos_num;
+		pos_num++;
+		current = current->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
@@ -44,12 +60,19 @@ int	main(int argc, char **argv)
 
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	stack_a = allocate_stack_a(argc, argv);
+	assign_pos(stack_a);
+	ft_printf("The smallest num pos: %d\n", find_smallest_num(*stack_a));
 	stack_size = get_stack_size(*stack_a);
 	ft_printf("Stack Size: %d\n---\n", stack_size);
 	if (stack_size == 3)
 	{
 		three_num_algor(stack_a);
 	}
+	else if (stack_size == 2)
+		two_num_algor(stack_a);
+	else if (stack_size == 4)
+		four_n_five_num_algor(stack_a, stack_b);
+	ft_printf("sorted stack\n");
 	print_stack(stack_a);
 
 	//swap test:
