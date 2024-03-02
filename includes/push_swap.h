@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/02 15:24:30 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/02 22:08:54 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,17 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+/*
+ * data : 6 2 3 7
+ * pos  : 0 1 2 3
+ * index: 3 1 2 4
+*/
+
 typedef struct	s_stack
 {
 	int	data;
 	int	pos;
+	int	index;
 	struct s_stack	*next;
 }	t_stack;
 

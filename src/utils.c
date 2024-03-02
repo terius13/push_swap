@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:58:22 by ting              #+#    #+#             */
-/*   Updated: 2024/02/29 13:08:27 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/02 23:22:48 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,22 @@ void	assign_pos(t_stack **stack_a)
 		current->pos = pos_num;
 		pos_num++;
 		current = current->next;
+	}
+}
+
+//The variable stack_size is use to assign the index to the list. It starts assigning from the biggest to smallest number
+
+void	assign_index(t_stack **stack_a)
+{
+	int	index_num;
+	int	stack_size;
+	t_stack	*current;
+
+	current = *stack_a;
+	index_num = 1;
+	stack_size = get_stack_size(*stack_a);
+	while (current)
+	{
+		
 	}
 }

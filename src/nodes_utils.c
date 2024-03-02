@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 17:13:03 by ting              #+#    #+#             */
-/*   Updated: 2024/02/17 14:07:26 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/02 22:49:00 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_stack	*new_node(int num)
 	if (!new)
 		return (NULL);
 	(*new).data = num;
+	(*new).pos = -1;
+	(*new).index = 0;
 	(*new).next = NULL;
 	return (new);
 }
