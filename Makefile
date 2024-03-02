@@ -6,7 +6,7 @@
 #    By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 11:09:54 by ting              #+#    #+#              #
-#    Updated: 2024/02/24 19:05:05 by ting             ###   ########.fr        #
+#    Updated: 2024/02/29 13:08:44 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = alloc_stacka.c push_swap.c \
       check_for_error.c nodes_utils.c \
       swap_oper.c push_oper.c \
       rotate_oper.c re_rotate_oper.c \
-      small_stack_algorithm.c
+      small_stack_algorithm.c utils.c \
 
 
 OBJ = $(addprefix $(SRC_PATH), $(SRC:.c=.o))

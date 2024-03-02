@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:39:50 by ting              #+#    #+#             */
-/*   Updated: 2024/02/17 18:15:36 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/29 12:41:37 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,13 @@ void	push(t_stack **src, t_stack **dest)
 void	push_a(t_stack **stack_b, t_stack **stack_a)
 {
 	push(stack_b, stack_a);
+	assign_pos(stack_a);
 	ft_printf("pa\n");
 }
 
 void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
+	assign_pos(stack_a);
 	ft_printf("pb\n");
 }
