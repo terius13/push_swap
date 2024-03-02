@@ -6,7 +6,7 @@
 #    By: ting <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/16 17:33:51 by ting              #+#    #+#              #
-#    Updated: 2024/02/20 11:55:01 by ting             ###   ########.fr        #
+#    Updated: 2024/03/02 15:50:45 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC = ft_atoi.c ft_isalpha.c \
       ft_printf.c ft_prtchar_printf.c \
       ft_prthex_printf.c ft_prtnbr_printf.c \
       ft_prtstr_printf.c ft_prtunnbr_printf.c \
-      ft_strcmp.c
+      ft_strcmp.c ft_atol.c \
     
 
 BNS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
