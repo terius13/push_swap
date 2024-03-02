@@ -6,13 +6,13 @@
 #    By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 11:09:54 by ting              #+#    #+#              #
-#    Updated: 2024/02/24 19:05:05 by ting             ###   ########.fr        #
+#    Updated: 2024/02/28 19:39:22 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 LIBFT = libft/libft.a
 
