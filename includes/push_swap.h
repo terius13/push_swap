@@ -6,7 +6,11 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/02/28 20:47:43 by ting             ###   ########.fr       */
+=======
+/*   Updated: 2024/02/29 13:09:22 by ting             ###   ########.fr       */
+>>>>>>> b06f84b06baa5f3f99e8dc41c6036331fc7619de
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +29,10 @@ typedef struct	s_stack
 }	t_stack;
 
 //push_swap.c
+//main
+
+//utils.c
+int	find_smallest_num(t_stack *stack_a);
 void	print_stack(t_stack **stack_a);
 int	get_stack_size(t_stack *stack_a);
 void	assign_pos(t_stack **stack_a);
@@ -67,9 +75,16 @@ void	re_rotate_b(t_stack **stack_b);
 void	re_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
 
 //small_stack_algorithm.c
+<<<<<<< HEAD
 void	two_num_algor(t_stack **stack_a);
 void	three_num_algor(t_stack **stack_a);
 int	find_smallest_num(t_stack *stack_a);
+=======
+void    two_num_algor(t_stack **stack_a);
+void	three_num_algor(t_stack **stack_a);
+void	four_num_algor(t_stack **stack_a, t_stack **stack_b);
+void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
+>>>>>>> b06f84b06baa5f3f99e8dc41c6036331fc7619de
 void	four_n_five_num_algor(t_stack **stack_a, t_stack **stack_b);
 
 #endif

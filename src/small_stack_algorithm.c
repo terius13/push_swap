@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:29:54 by ting              #+#    #+#             */
-/*   Updated: 2024/02/28 21:00:00 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/29 13:09:36 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	two_num_algor(t_stack **stack_a)
 		swap_a(stack_a);
 }
 /*
+three_num_algor:
 Case 1: 2 1 3 -sa> 1 2 3
 Case 2: 3 1 2 -ra> 1 2 3
 Case 3: 2 3 1 -rra> 1 2 3
@@ -56,31 +57,53 @@ void	three_num_algor(t_stack **stack_a)
 	}
 }
 
-int	find_smallest_num(t_stack *stack_a)
-{
-	t_stack	*small_num;
-
-	small_num = stack_a;
-	while (stack_a->next)
-	{
-		if (small_num->data > stack_a->next->data)
-		{
-			small_num = stack_a->next;
-		}
-		stack_a = stack_a->next;
-	}
-	return (small_num->pos);
-}
-
-void	four_n_five_num_algor(t_stack **stack_a, t_stack **stack_b)
+/*
+four_num_algor & five_num_algor:
+The algor will search for 1 smallest num in stack_a, 2 smallest num if it five_num_algor.
+And it will push the smallest num over to stack_b, leaving three num in stack_a.
+Three_num_algor will be called to sort the remaining three num in stack_a.
+Then it will bring back the 1 or 2 smallest num back to stack_a.
+*/
+void	four_num_algor(t_stack **stack_a, t_stack **stack_b)
 {
 	int	stack_size;
 	int	small_num_pos;
 
 	stack_size = get_stack_size(*stack_a);
-	if (stack_size == 4)
+	small_num_pos = find_smallest_num(*stack_a);
+	if (small_num_pos < (stack_size / 2))
+	{
+		while (small_num_pos > 0)
+		{
+			rotate_a(stack_a);
+			small_num_pos--;
+		}
+	}
+	else if (small_num_pos >= (stack_size / 2))
+	{
+		small_num_pos = stack_size - small_num_pos;
+		while (small_num_pos > 0)
+		{
+			re_rotate_a(stack_a);
+			small_num_pos--;
+		}
+	}
+	push_b(stack_a, stack_b);
+	three_num_algor(stack_a);
+	push_a(stack_b, stack_a);
+}
+
+void	five_num_algor(t_stack **stack_a, t_stack **stack_b)
+{
+	int	stack_size;
+	int	small_num_pos;
+	int	count;
+
+	count = 2;
+	while (count > 0)
 	{
 		small_num_pos = find_smallest_num(*stack_a);
+		stack_size = get_stack_size(*stack_a);
 		if (small_num_pos < (stack_size / 2))
 		{
 			while (small_num_pos > 0)
@@ -88,9 +111,6 @@ void	four_n_five_num_algor(t_stack **stack_a, t_stack **stack_b)
 				rotate_a(stack_a);
 				small_num_pos--;
 			}
-			push_b(stack_a, stack_b);
-			three_num_algor(stack_a);
-			push_a(stack_b, stack_a);
 		}
 		else if (small_num_pos >= (stack_size / 2))
 		{
@@ -99,10 +119,12 @@ void	four_n_five_num_algor(t_stack **stack_a, t_stack **stack_b)
 			{
 				re_rotate_a(stack_a);
 				small_num_pos--;
-			}
-			push_b(stack_a, stack_b);
-			three_num_algor(stack_a);
-			push_a(stack_b, stack_a);
+			}	
 		}
+		push_b(stack_a, stack_b);
+		count--;
 	}
+	three_num_algor(stack_a);
+	push_a(stack_b, stack_a);
+	push_a(stack_b, stack_a);
 }

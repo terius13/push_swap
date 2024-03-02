@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:27:34 by ting              #+#    #+#             */
-/*   Updated: 2024/02/24 18:36:34 by ting             ###   ########.fr       */
+/*   Updated: 2024/02/29 12:23:26 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	swap(t_stack **stack)
 {
 	int	temp;
 
-	if (*stack == NULL ||(*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 	temp = (*stack)->data;
 	(*stack)->data = (*stack)->next->data;
