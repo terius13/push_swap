@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/02 22:08:54 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/04 14:10:59 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	find_smallest_num(t_stack *stack_a);
 void	print_stack(t_stack **stack_a);
 int	get_stack_size(t_stack *stack_a);
 void	assign_pos(t_stack **stack_a);
+void	assign_index(t_stack **stack_a);
 
 //alloc_stacka.c
 t_stack		*if_string(char *str);

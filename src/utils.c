@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:58:22 by ting              #+#    #+#             */
-/*   Updated: 2024/03/02 23:22:48 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/04 14:36:41 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,31 @@ void	assign_pos(t_stack **stack_a)
 
 void	assign_index(t_stack **stack_a)
 {
-	int	index_num;
 	int	stack_size;
 	t_stack	*current;
+	long	num;
+	t_stack	*highest;
 
 	current = *stack_a;
-	index_num = 1;
 	stack_size = get_stack_size(*stack_a);
-	while (current)
+	while (stack_size > 0)
 	{
-		
+		current = *stack_a;
+		num = -2147483648;
+		highest = NULL;
+		while (current != NULL)
+		{
+			if ((current->data == num) && (current->index == 0))
+				current->index = 1;
+			if ((current->data > num) && (current->index == 0))
+			{
+				num = current->data;
+				highest = current;
+			}
+			current = current->next;
+		}
+		if (highest != NULL)
+			highest->index = stack_size;
+		stack_size--;
 	}
 }

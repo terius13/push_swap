@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/02/29 13:09:11 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/04 14:34:09 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ int	main(int argc, char **argv)
 
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	stack_a = allocate_stack_a(argc, argv);
-	assign_pos(stack_a);
+	ft_printf("The pos of the first stack: %d\n", (*stack_a)->pos);
+	ft_printf("The index of the first stack: %d\n", (*stack_a)->index);
+	ft_printf("The index of the second stack: %d\n", (*stack_a)->next->index);
+	ft_printf("The index of the third stack: %d\n", (*stack_a)->next->next->index);
+	ft_printf("The index of the forth stack: %d\n", (*stack_a)->next->next->next->index);
+	ft_printf("The index of the last stack: %d\n", (*stack_a)->next->next->next->next->index);
 	ft_printf("The smallest num pos: %d\n", find_smallest_num(*stack_a));
 	stack_size = get_stack_size(*stack_a);
 	ft_printf("Stack Size: %d\n---\n", stack_size);
