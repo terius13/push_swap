@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/04 14:10:59 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/05 11:28:09 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,10 @@ void    two_num_algor(t_stack **stack_a);
 void	three_num_algor(t_stack **stack_a);
 void	four_num_algor(t_stack **stack_a, t_stack **stack_b);
 void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
+
+//big_stack_algorithm.c
+void	big_stack_algor(t_stack **stack_a, t_stack **stack_b);
+void	push_all_until_three_left(t_stack **stack_a, t_stack **stack_b);
+
 
 #endif
