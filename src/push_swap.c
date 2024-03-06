@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/05 11:27:01 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/06 11:22:35 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int	main(int argc, char **argv)
 		five_num_algor(stack_a, stack_b);
 	else if (stack_size > 5)
 		big_stack_algor(stack_a, stack_b);
-	ft_printf("sorted stack\n");
-	print_stack(stack_a);
+	//ft_printf("sorted stack\n");
+	//print_stack(stack_a);
 
 	//swap test:
 //	print_stack(stack_a);

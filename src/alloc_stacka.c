@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-/*   Updated: 2024/03/04 14:17:32 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/06 13:16:47 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_stack		*if_string(char *str)
 	stack_a = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_a)
 		return (NULL);
+	*stack_a = NULL;
 	strs = ft_split(str, ' ');
 	checker_argv(strs);
 	while (strs[i] != NULL)
@@ -44,6 +45,7 @@ t_stack		**allocate_stack_a(int count, char **argv)
 	stack_a = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_a)
 		return(NULL);
+	*stack_a = NULL;
 	if (count < 2)
 	{
 		ft_error_msg();

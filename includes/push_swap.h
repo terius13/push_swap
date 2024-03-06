@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/05 11:28:09 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/06 12:04:55 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+//might have to change/remove limits.h later on
+# include <limits.h>
 # include <stdlib.h>
 # include <stdio.h>
 
@@ -21,13 +23,17 @@
  * data : 6 2 3 7
  * pos  : 0 1 2 3
  * index: 3 1 2 4
+target_pos: start from 0 too
 */
 
 typedef struct	s_stack
 {
-	int	data;
-	int	pos;
-	int	index;
+	long	data;
+	long	pos;
+	long	index;
+	long	target_pos;
+	int	cost_a;
+	int	cost_b;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -87,6 +93,7 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
 //big_stack_algorithm.c
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b);
 void	push_all_until_three_left(t_stack **stack_a, t_stack **stack_b);
+void	assign_target_pos(t_stack **stack_a, t_stack **stack_b);
 
 
 #endif
