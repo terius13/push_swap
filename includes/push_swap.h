@@ -6,11 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/07 13:41:15 by ting             ###   ########.fr       */
-=======
-/*   Updated: 2024/03/07 11:27:19 by ting             ###   ########.fr       */
->>>>>>> dba8fc61a88de768f9a0c6a4062389104ed469c0
+/*   Updated: 2024/03/07 16:43:31 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +32,7 @@ typedef struct s_stack
 	long			data;
 	long			pos;
 	long			index;
-	long			target_pos;
+	int				target_pos;
 	int				cost_a;
 	int				cost_b;
 }	t_stack;
@@ -48,7 +44,7 @@ typedef struct s_stack
 int		find_smallest_num(t_stack *stack_a);
 void	print_stack(t_stack **stack_a);
 int		get_stack_size(t_stack *stack_a);
-void	assign_pos(t_stack **stack_a);
+void	assign_pos(t_stack **stack);
 void	assign_index(t_stack **stack_a);
 
 //alloc_stacka.c
@@ -87,6 +83,11 @@ void	reverse_rotate(t_stack **stack);
 void	re_rotate_a(t_stack **stack_a);
 void	re_rotate_b(t_stack **stack_b);
 void	re_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
+
+//calculate_cost.c
+void	cal_cost_a(t_stack **stack_a, t_stack **stack_b);
+void	cal_cost_b(t_stack **stack_b);
+void	get_cost(t_stack **stack_a, t_stack **stack_b);
 
 //small_stack_algorithm.c
 void	two_num_algor(t_stack **stack_a);

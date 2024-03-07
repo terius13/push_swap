@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:30:17 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 11:19:24 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/07 16:42:13 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,6 @@ void	assign_target_pos(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	find_cost_to_stack_a()
-{
-
-}
-
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 {
 	push_all_until_three_left(stack_a, stack_b);
@@ -109,11 +104,15 @@ void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("Stack_a now after three num sort:\n");
 	print_stack(stack_a);
 	assign_pos(stack_a);
+	assign_pos(stack_b);
 	assign_target_pos(stack_a, stack_b);
+	get_cost(stack_a, stack_b);
+	/*
 	ft_printf("Target Pos for first element in stack_b: %d\n", (*stack_b)->target_pos);
 	ft_printf("Target Pos for second element in stack_b: %d\n", (*stack_b)->next->target_pos);
 	ft_printf("Target Pos for third element in stack_b: %d\n", (*stack_b)->next->next->target_pos);
 	ft_printf("Target Pos for fourth element in stack_b: %d\n", (*stack_b)->next->next->next->target_pos);
 	ft_printf("Target Pos for fifth element in stack_b: %d\n", (*stack_b)->next->next->next->next->target_pos);
 	ft_printf("Target Pos for six element in stack_b: %d\n", (*stack_b)->next->next->next->next->next->target_pos);
+	*/
 }

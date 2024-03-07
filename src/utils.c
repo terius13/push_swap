@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:58:22 by ting              #+#    #+#             */
-/*   Updated: 2024/03/04 14:36:41 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/07 15:43:36 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ int	get_stack_size(t_stack *stack_a)
 }
 
 //i can modify the stack directly by assign another variable, without changing the original sequence of the original stack
-void	assign_pos(t_stack **stack_a)
+void	assign_pos(t_stack **stack)
 {
 	int     pos_num;
 	t_stack *current;
 
-	current = *stack_a;
+	current = *stack;
 	pos_num = 0;
 	while (current)
 	{
