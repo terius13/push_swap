@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:30:17 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 16:42:13 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/07 17:47:46 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,13 +106,14 @@ void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 	assign_pos(stack_a);
 	assign_pos(stack_b);
 	assign_target_pos(stack_a, stack_b);
-	get_cost(stack_a, stack_b);
-	/*
 	ft_printf("Target Pos for first element in stack_b: %d\n", (*stack_b)->target_pos);
 	ft_printf("Target Pos for second element in stack_b: %d\n", (*stack_b)->next->target_pos);
 	ft_printf("Target Pos for third element in stack_b: %d\n", (*stack_b)->next->next->target_pos);
 	ft_printf("Target Pos for fourth element in stack_b: %d\n", (*stack_b)->next->next->next->target_pos);
 	ft_printf("Target Pos for fifth element in stack_b: %d\n", (*stack_b)->next->next->next->next->target_pos);
 	ft_printf("Target Pos for six element in stack_b: %d\n", (*stack_b)->next->next->next->next->next->target_pos);
-	*/
+	get_cost(stack_a, stack_b);
+	ft_printf("First ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->cost_a, (*stack_b)->cost_b);
+	ft_printf("Second ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->cost_a, (*stack_b)->next->cost_b);
+	ft_printf("Third ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->next->cost_a, (*stack_b)->next->next->cost_b);
 }

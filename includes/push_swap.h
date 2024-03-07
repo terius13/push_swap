@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 16:43:31 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/07 17:19:05 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	re_rotate_b(t_stack **stack_b);
 void	re_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
 
 //calculate_cost.c
-void	cal_cost_a(t_stack **stack_a, t_stack **stack_b);
-void	cal_cost_b(t_stack **stack_b);
+int		cal_cost_a(t_stack *stack_a, t_stack *stack_b);
+int		cal_cost_b(t_stack *stack_b);
 void	get_cost(t_stack **stack_a, t_stack **stack_b);
 
 //small_stack_algorithm.c
