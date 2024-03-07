@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:30:17 by ting              #+#    #+#             */
-/*   Updated: 2024/03/06 13:38:36 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/07 11:19:24 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,6 @@ void	assign_target_pos(t_stack **stack_a, t_stack **stack_b)
 			}
 			tmp_a = tmp_a->next;
 		}
-		ft_printf("Target index: %d\n", target_index);
-		ft_printf("Target posi: %d\n", target_posi);
 		if (target_posi == -1)
 		{
 			tmp_a = (*stack_a);
@@ -90,13 +88,11 @@ void	assign_target_pos(t_stack **stack_a, t_stack **stack_b)
 				{
 					target_index = tmp_a->index;
 					target_posi = tmp_a->pos;
-					ft_printf("target posi in if %d\n", target_posi);
 				}
 				tmp_a = tmp_a->next;
 			}
 		}
 		tmp_b->target_pos = target_posi;
-		ft_printf("Target pos of tmp_b:%d\n",tmp_b->target_pos);
 		tmp_b = tmp_b->next;
 	}
 }

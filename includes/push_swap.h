@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/06 12:04:55 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/07 11:27:19 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,30 @@
 target_pos: start from 0 too
 */
 
-typedef struct	s_stack
+typedef struct s_stack
 {
-	long	data;
-	long	pos;
-	long	index;
-	long	target_pos;
-	int	cost_a;
-	int	cost_b;
 	struct s_stack	*next;
+	long			data;
+	long			pos;
+	long			index;
+	long			target_pos;
+	int				cost_a;
+	int				cost_b;
 }	t_stack;
 
 //push_swap.c
 //main
 
 //utils.c
-int	find_smallest_num(t_stack *stack_a);
+int		find_smallest_num(t_stack *stack_a);
 void	print_stack(t_stack **stack_a);
-int	get_stack_size(t_stack *stack_a);
+int		get_stack_size(t_stack *stack_a);
 void	assign_pos(t_stack **stack_a);
 void	assign_index(t_stack **stack_a);
 
 //alloc_stacka.c
-t_stack		*if_string(char *str);
-t_stack		**allocate_stack_a(int count, char **argv);
+t_stack	*if_string(char *str);
+t_stack	**allocate_stack_a(int count, char **argv);
 
 //nodes_utils.c
 t_stack	*new_node(int num);
@@ -85,7 +85,7 @@ void	re_rotate_b(t_stack **stack_b);
 void	re_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
 
 //small_stack_algorithm.c
-void    two_num_algor(t_stack **stack_a);
+void	two_num_algor(t_stack **stack_a);
 void	three_num_algor(t_stack **stack_a);
 void	four_num_algor(t_stack **stack_a, t_stack **stack_b);
 void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
@@ -94,6 +94,5 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b);
 void	push_all_until_three_left(t_stack **stack_a, t_stack **stack_b);
 void	assign_target_pos(t_stack **stack_a, t_stack **stack_b);
-
 
 #endif
