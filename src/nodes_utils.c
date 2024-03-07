@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 17:13:03 by ting              #+#    #+#             */
-/*   Updated: 2024/03/02 22:49:00 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/07 11:34:21 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	add_node_bottom(t_stack **stack, t_stack *new)
 	if (!*stack)
 	{
 		*stack = new;
-		return;
+		return ;
 	}
 	while (current->next)
 		current = current->next;
