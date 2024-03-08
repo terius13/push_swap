@@ -6,7 +6,7 @@
 /*   By: ting <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:13:55 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 11:29:42 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/08 14:29:04 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ int		ft_prtchar_printf(char c);
 int		ft_prtnbr_printf(int nbr);
 int		ft_prtunnbr_printf(unsigned int nbr);
 int		ft_prthex_printf(unsigned long n, char format);
+int		ft_nb_abs(int num);
 
 #endif

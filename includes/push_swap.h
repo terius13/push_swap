@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 18:33:50 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/08 15:43:54 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,12 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b);
 void	push_all_until_three_left(t_stack **stack_a, t_stack **stack_b);
 void	assign_target_pos(t_stack **stack_a, t_stack **stack_b);
+
+//big_stack_algor_oper.c
+void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b);
+void	get_cheapest_stack_into_pos(t_stack **stack_a, t_stack **stack_b);
 
 #endif

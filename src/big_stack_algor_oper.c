@@ -6,57 +6,94 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 11:55:08 by ting              #+#    #+#             */
-/*   Updated: 2024/03/08 12:21:20 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/08 15:47:15 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b)
+void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
 {
-	int	cost_a;
-	int	cost_b;
-
-	cost_a = (*stack_b)->cost_a;
-	cost_b = (*stack_b)->cost_b;
-	while (cost_a > 0 && cost_b > 0)
+	while (*cost_a > 0 && *cost_b > 0)
 	{
 		rotate_a_and_b(stack_a, stack_b);
-		cost_a--;
-		cost_b--;
+		(*cost_a)--;
+		(*cost_b)--;
 	}
-	(*stack_b)->cost_a = cost_a;
-	(*stack_b)->cost_b = cost_b;
 }
 
-void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b)
+void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
 {
+	while (*cost_a > 0 && *cost_b > 0)
+	{
+		re_rotate_a_and_b(stack_a, stack_b);
+		(*cost_a)--;
+		(*cost_b)--;
+	}
+}
+
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+{
+	while (*cost_a > 0 || *cost_b > 0)
+	{
+		if (*cost_a > 0)
+		{
+			rotate_a(stack_a);
+			(*cost_a)--;
+		}
+		if (*cost_b > 0)
+		{
+			rotate_b(stack_b);
+			(*cost_b)--;
+		}
+	}
+}
+
+void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost_a, int *cost_b)
+{
+	while (*cost_a > 0 || *cost_b > 0)
+	{
+		if (*cost_a > 0)
+		{
+			re_rotate_a(stack_a);
+			(*cost_a)--;
+		}
+		if (*cost_b > 0)
+		{
+			re_rotate_b(stack_b);
+			(*cost_b)--;
+		}
+	}
+}
+
+void	get_cheapest_stack_into_pos(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+	int	cheapest;
 	int	cost_a;
 	int	cost_b;
 
-	cost_a = (*stack_b)->cost_a * -1;
-	cost_b = (*stack_b)->cost_b * -1;
-	while (cost_a > 0 && cost_b > 0)
+	tmp = *stack_b;
+	cheapest = INT_MAX;
+	while (tmp)
 	{
-		re_rotate_a_and_b(stack_a, stack_b);
-		cost_a--;
-		cost_b--;
+		if ((ft_nb_abs(tmp->cost_a) + ft_nb_abs(tmp->cost_b)) < cheapest)
+		{
+			cheapest = ft_nb_abs(tmp->cost_a) + ft_nb_abs(tmp->cost_b);
+			cost_a = tmp->cost_a;
+			cost_b = tmp->cost_b;
+		}
+		tmp = tmp->next;
 	}
-	(*stack_b)->cost_a = cost_a;
-	(*stack_b)->cost_b = cost_b;
-}
-
-void	rotate_stack(t_stack **stack)
-{
-
-}
-
-void	reverse_rotate_stack(t_stack **stack)
-{
-
-}
-
-void	get_stack_into_pos(t_stack **stack_a, t_stack **stack_b)
-{
-
+	if (cost_a < 0 && cost_b < 0)
+	{
+		reverse_rotate_both_stack(stack_a, stack_b, &cost_a, &cost_b);
+	}
+	else if (cost_a > 0 && cost_b > 0)
+	{
+		rotate_both_stack(stack_a, stack_b, &cost_a, &cost_b);
+	}
+	rotate_stack(stack_a, stack_b, &cost_a, &cost_b);
+	reverse_rotate_stack(stack_a, stack_b, &cost_a, &cost_b);
+	push_a(stack_b, stack_a);
 }

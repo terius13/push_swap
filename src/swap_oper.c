@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:27:34 by ting              #+#    #+#             */
-/*   Updated: 2024/03/08 12:23:07 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/08 15:44:53 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	swap_a(t_stack **stack_a)
 void	swap_b(t_stack **stack_b)
 {
 	swap(stack_b);
-	assign_pos(stack_a);
+	assign_pos(stack_b);
 	ft_printf("sb\n");
 }
 

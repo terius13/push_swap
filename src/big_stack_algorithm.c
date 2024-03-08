@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:30:17 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 18:36:54 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/08 15:48:17 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,12 @@ void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("Second ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->cost_a, (*stack_b)->next->cost_b);
 	ft_printf("Third ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->next->cost_a, (*stack_b)->next->next->cost_b);
 	ft_printf("Fourth ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->next->next->cost_a, (*stack_b)->next->next->next->cost_b);
+	while (*stack_b != NULL)
+	{
+	get_cheapest_stack_into_pos(stack_a, stack_b);
+	}
+	ft_printf("Stack_a now:\n");
+	print_stack(stack_a);
+	ft_printf("Stack_b now:\n");
+	print_stack(stack_b);
 }
