@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:48:06 by ting              #+#    #+#             */
-/*   Updated: 2024/02/29 12:37:34 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/08 12:21:29 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	rotate_a(t_stack **stack_a)
 void	rotate_b(t_stack **stack_b)
 {
 	rotate(stack_b);
+	assign_pos(stack_b);
 	ft_printf("rb\n");
 }
 
@@ -48,5 +49,6 @@ void	rotate_a_and_b(t_stack **stack_b, t_stack **stack_a)
 	rotate_a(stack_a);
 	assign_pos(stack_a);
 	rotate_b(stack_b);
+	assign_pos(stack_b);
 	ft_printf("rr\n");
 }
