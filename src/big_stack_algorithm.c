@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:30:17 by ting              #+#    #+#             */
-/*   Updated: 2024/03/08 16:44:27 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/12 09:30:37 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,12 @@ void	assign_target_pos(t_stack **stack_a, t_stack **stack_b)
 
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 {
+	int	i = 1;
 	push_all_until_three_left(stack_a, stack_b);
 	three_num_algor(stack_a);
 	ft_printf("Stack_a now after three num sort:\n");
 	print_stack(stack_a);
+/*
 	assign_pos(stack_a);
 	assign_pos(stack_b);
 	assign_target_pos(stack_a, stack_b);
@@ -111,22 +113,26 @@ void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("Target Pos for third element in stack_b: %d\n", (*stack_b)->next->next->target_pos);
 	ft_printf("Target Pos for fourth element in stack_b: %d\n", (*stack_b)->next->next->next->target_pos);
 	get_cost(stack_a, stack_b);
-	/*
 	ft_printf("Target Pos for fifth element in stack_b: %d\n", (*stack_b)->next->next->next->next->target_pos);
 	ft_printf("Target Pos for six element in stack_b: %d\n", (*stack_b)->next->next->next->next->next->target_pos);
-	*/
+
 	ft_printf("First ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->cost_a, (*stack_b)->cost_b);
 	ft_printf("Second ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->cost_a, (*stack_b)->next->cost_b);
 	ft_printf("Third ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->next->cost_a, (*stack_b)->next->next->cost_b);
 	ft_printf("Fourth ele, Cost_a: %d, Cost_b: %d\n", (*stack_b)->next->next->next->cost_a, (*stack_b)->next->next->next->cost_b);
-	
+	*/
 	while (*stack_b != NULL)
 	{
 		assign_pos(stack_a);
 		assign_pos(stack_b);
 		assign_target_pos(stack_a, stack_b);
+		ft_printf("Round: %d.Target Pos for first element in stack_b: %d\n", i, (*stack_b)->target_pos);
+	//	ft_printf("Round: %d.Target Pos for second element in stack_b: %d\n", i, (*stack_b)->next->target_pos);
+	//	ft_printf("Round: %d.Target Pos for third element in stack_b: %d\n", i, (*stack_b)->next->next->target_pos);
+	//	ft_printf("Round: Target Pos for fourth element in stack_b: %d\n", i, (*stack_b)->next->next->next->target_pos);
 		get_cost(stack_a, stack_b);
 		get_cheapest_stack_into_pos(stack_a, stack_b);
+		i++;
 	}
 	
 	ft_printf("Stack_a now:\n");
