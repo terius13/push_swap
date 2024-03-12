@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/12 11:36:02 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/12 12:58:40 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	main(int argc, char **argv)
 //	re_rotate_a(stack_a);
 //	ft_printf("new stack\n");
 //	ft_printf("Pos after switching: %d\n", (*stack_a)->pos);
-//	print_stack(stack_a);
+	ft_printf("Final stack:\n");
+	print_stack(stack_a);
 	return(0);
 }
