@@ -6,7 +6,7 @@
 #    By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 11:09:54 by ting              #+#    #+#              #
-#    Updated: 2024/03/08 13:55:26 by ting             ###   ########.fr        #
+#    Updated: 2024/03/12 11:26:32 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,14 +28,14 @@ SRC = alloc_stacka.c push_swap.c \
 
 OBJ = $(addprefix $(SRC_PATH), $(SRC:.c=.o))
 
-OBJS_RM = $(SRC:.c=.o)
+#OBJS_RM = $(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME) 
 
 $(LIBFT):
 	$(MAKE) -C ./libft
 
-$(NAME): $(LIBFT_SRC) $(OBJ)
+$(NAME): $(OBJ)
 	cc $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean:

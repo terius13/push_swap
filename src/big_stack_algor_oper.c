@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 11:55:08 by ting              #+#    #+#             */
-/*   Updated: 2024/03/08 16:41:32 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/12 10:48:23 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,13 @@ void	get_cheapest_stack_into_pos(t_stack **stack_a, t_stack **stack_b)
 	{
 		rotate_both_stack(stack_a, stack_b, &cost__a, &cost__b);
 	}
-	rotate_stack(stack_a, stack_b, &cost__a, &cost__b);
-	reverse_rotate_stack(stack_a, stack_b, &cost__a, &cost__b);
+	if (cost__a > 0 || cost__b > 0)
+		rotate_stack(stack_a, stack_b, &cost__a, &cost__b);
+	else if (cost__a < 0 || cost__b < 0)
+	{
+		cost__a = ft_nb_abs(cost__a);
+		cost__b = ft_nb_abs(cost__b);
+		reverse_rotate_stack(stack_a, stack_b, &cost__a, &cost__b);
+	}
 	push_a(stack_b, stack_a);
 }

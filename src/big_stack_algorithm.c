@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:30:17 by ting              #+#    #+#             */
-/*   Updated: 2024/03/12 09:30:37 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/12 11:35:29 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,42 @@ void	assign_target_pos(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+void	mv_smallest_num_to_top(t_stack **stack_a)
+{
+	t_stack	*current;
+	int	pos;
+	int	stack_size;
+
+	assign_pos(stack_a);
+	stack_size = get_stack_size(*stack_a);
+	current = (*stack_a);
+	if (current->index != 1)
+	{
+		while (current->index != 1)
+		{
+			current = current->next;
+		}
+		pos = current->pos;
+		if (pos <= stack_size / 2)
+		{
+			while (pos > 0)
+			{
+				rotate_a(stack_a);
+				pos--;
+			}
+		}
+		else if (pos > stack_size / 2)
+		{
+			pos = stack_size - pos;
+			while (pos > 0)
+			{
+				re_rotate_a(stack_a);
+				pos--;
+			}
+		}
+	}
+}
+
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i = 1;
@@ -126,7 +162,7 @@ void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 		assign_pos(stack_a);
 		assign_pos(stack_b);
 		assign_target_pos(stack_a, stack_b);
-		ft_printf("Round: %d.Target Pos for first element in stack_b: %d\n", i, (*stack_b)->target_pos);
+//		ft_printf("Round: %d.Target Pos for first element in stack_b: %d\n", i, (*stack_b)->target_pos);
 	//	ft_printf("Round: %d.Target Pos for second element in stack_b: %d\n", i, (*stack_b)->next->target_pos);
 	//	ft_printf("Round: %d.Target Pos for third element in stack_b: %d\n", i, (*stack_b)->next->next->target_pos);
 	//	ft_printf("Round: Target Pos for fourth element in stack_b: %d\n", i, (*stack_b)->next->next->next->target_pos);
@@ -134,9 +170,9 @@ void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 		get_cheapest_stack_into_pos(stack_a, stack_b);
 		i++;
 	}
-	
-	ft_printf("Stack_a now:\n");
-	print_stack(stack_a);
-	ft_printf("Stack_b now:\n");
-	print_stack(stack_b);
+	mv_smallest_num_to_top(stack_a);	
+//	ft_printf("Stack_a now:\n");
+//	print_stack(stack_a);
+//	ft_printf("Stack_b now:\n");
+//	print_stack(stack_b);
 }

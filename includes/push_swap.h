@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/08 16:57:40 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/12 11:10:08 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b);
 void	push_all_until_three_left(t_stack **stack_a, t_stack **stack_b);
 void	assign_target_pos(t_stack **stack_a, t_stack **stack_b);
+void    mv_smallest_num_to_top(t_stack **stack_a);
 
 //big_stack_algor_oper.c
 void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b);
