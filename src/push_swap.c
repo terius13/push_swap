@@ -6,11 +6,28 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/13 10:40:13 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/13 11:55:19 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	tmp = *stack;
+	if (!stack || !*stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		(*stack)->
+		free (*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
+}
 
 int	main(int argc, char **argv)
 {
@@ -34,6 +51,10 @@ int	main(int argc, char **argv)
 		five_num_algor(stack_a, stack_b);
 	else if (stack_size > 5)
 		big_stack_algor(stack_a, stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	free (stack_a);
+	free (stack_b);
 //	print_stack(stack_a);
 	return(0);
 }
