@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/12 15:19:13 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/13 10:40:13 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	stack_a = allocate_stack_a(argc, argv);
 	stack_size = get_stack_size(*stack_a);
-	print_stack(stack_a);	
+//	print_stack(stack_a);	
 	if (stack_size == 3)
 	{
 		three_num_algor(stack_a);
@@ -34,6 +34,6 @@ int	main(int argc, char **argv)
 		five_num_algor(stack_a, stack_b);
 	else if (stack_size > 5)
 		big_stack_algor(stack_a, stack_b);
-	print_stack(stack_a);
+//	print_stack(stack_a);
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:30:17 by ting              #+#    #+#             */
-/*   Updated: 2024/03/12 15:39:37 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/13 10:38:33 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,22 +135,20 @@ void	mv_smallest_num_to_top(t_stack **stack_a)
 
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b)
 {
-	int	i = 1;
 	push_all_until_three_left(stack_a, stack_b);
 	three_num_algor(stack_a);
 	while (*stack_b != NULL)
 	{
-//		write(1, "bla\n", 4);
-//		print_stack(stack_a);
-//		write(1, "bla\n", 4);
-//		print_stack(stack_b);
-//		write(1, "bla\n", 4);
+	//	write(1, "A---\n", 5);
+	//	print_stack(stack_a);
+	//	write(1, "B---\n", 5);
+	//	print_stack(stack_b);
+	//	write(1, "bla--\n", 6);
 		assign_pos(stack_a);
 		assign_pos(stack_b);
 		assign_target_pos(stack_a, stack_b);
 		get_cost(stack_a, stack_b);
 		get_cheapest_stack_into_pos(stack_a, stack_b);
-//		i++;
 	}
 	mv_smallest_num_to_top(stack_a);	
 }
