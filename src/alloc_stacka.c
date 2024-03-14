@@ -6,13 +6,13 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 15:42:20 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/13 16:26:40 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack		*if_string(char *str)
+t_stack		**if_string(char *str)
 {
 	t_stack	**stack_a;
 	char	**strs;
@@ -32,8 +32,8 @@ t_stack		*if_string(char *str)
 		add_node_bottom(stack_a,new_node(num));
 		i++;
 	}
-	return (*stack_a);
-}
+	return (stack_a);
+}	
 
 t_stack		**allocate_stack_a(int count, char **argv)
 {
@@ -42,20 +42,24 @@ t_stack		**allocate_stack_a(int count, char **argv)
 	int	num;
 
 	i = 1;
-	stack_a = (t_stack **)malloc(sizeof(t_stack *));
-	if (!stack_a)
-		return(NULL);
-	*stack_a = NULL;
+	num = 0;
+//	stack_a = (t_stack **)malloc(sizeof(t_stack *));
+//	if (!stack_a)
+//		return(NULL);
+	stack_a = NULL;
 	if (count < 2)
 	{
 		ft_error_msg();
 	}
 	else if (count == 2)
 	{
-		*stack_a = if_string(argv[1]);
+		stack_a = if_string(argv[1]);
 	}
 	else if (count > 2)
 	{
+		stack_a = (t_stack **)malloc(sizeof(t_stack *));
+		if (!stack_a)
+			return (NULL);
 		checker_argv(&argv[1]);
 		while (i < count)
 		{
