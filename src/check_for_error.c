@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:28:52 by ting              #+#    #+#             */
-/*   Updated: 2024/03/13 15:21:03 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/14 15:19:35 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void	check_for_digit(char **argv)
 			if ((argv[i][j] >= 48 && argv[i][j] <= 57) || (j == 0 && argv[i][j] == '-'))
 				j++;
 			else
+			{
 				ft_error_msg();
+			}
 		}
 		num = ft_atol(argv[i]);
 		if (num > max_int || num < min_int)
@@ -74,6 +76,7 @@ void	check_for_duplicates(char **argv)
 
 void	checker_argv(char **argv)
 {
+
 	check_for_digit(argv);
 	check_for_duplicates(argv);
 }

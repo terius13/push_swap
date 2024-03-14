@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/13 15:20:49 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/14 20:45:01 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_data
 } t_data;
 
 //push_swap.c
-//main
+void	free_stack(t_stack **stack);
 
 //utils.c
 int		find_smallest_num(t_stack *stack_a);
@@ -54,6 +54,7 @@ void	assign_pos(t_stack **stack);
 void	assign_index(t_stack **stack_a);
 
 //alloc_stacka.c
+void	ft_freestr(char **lst);
 t_stack	**if_string(char *str);
 t_stack	**allocate_stack_a(int count, char **argv);
 
