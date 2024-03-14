@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/13 11:55:19 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/14 13:02:19 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_stack(t_stack **stack)
 	while (*stack)
 	{
 		tmp = (*stack)->next;
-		(*stack)->
+	//	(*stack)->
 		free (*stack);
 		*stack = tmp;
 	}
