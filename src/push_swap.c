@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/14 22:24:25 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/15 11:29:10 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,19 @@ int	main(int argc, char **argv)
 	if (!stack_b)
 		return (1);
 	stack_size = get_stack_size(*stack_a);
-//	print_stack(stack_a);	
-//	if (stack_size == 3)
-//	{
-//		three_num_algor(stack_a);
-//	}
-//	else if (stack_size == 2)
-//		two_num_algor(stack_a);
-//	else if (stack_size == 4)
-//		four_num_algor(stack_a, stack_b);
-//	else if (stack_size == 5)
-//		five_num_algor(stack_a, stack_b);
-//	else if (stack_size > 5)
-//		big_stack_algor(stack_a, stack_b);
+	print_stack(stack_a);	
+	if (stack_size == 3)
+	{
+		three_num_algor(stack_a);
+	}
+	else if (stack_size == 2)
+		two_num_algor(stack_a);
+	else if (stack_size == 4)
+		four_num_algor(stack_a, stack_b);
+	else if (stack_size == 5)
+		five_num_algor(stack_a, stack_b);
+	else if (stack_size > 5)
+		big_stack_algor(stack_a, stack_b);
 	print_stack(stack_a);
 	free_stack(stack_a);
 	free (stack_b);

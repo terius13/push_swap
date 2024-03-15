@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:58:22 by ting              #+#    #+#             */
-/*   Updated: 2024/03/07 15:43:36 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/15 11:46:27 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	assign_index(t_stack **stack_a)
 	long	num;
 	t_stack	*highest;
 
-	current = *stack_a;
+//	current = *stack_a;
 	stack_size = get_stack_size(*stack_a);
 	while (stack_size > 0)
 	{
