@@ -10,6 +10,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*   Updated: 2024/03/17 14:28:14 by ting             ###   ########.fr       */
 =======
 /*   Updated: 2024/03/13 11:55:19 by ting             ###   ########.fr       */
@@ -17,6 +18,9 @@
 =======
 /*   Updated: 2024/03/13 11:55:19 by ting             ###   ########.fr       */
 >>>>>>> parent of bb5fd04 (mem errors)
+=======
+/*   Updated: 2024/03/12 15:19:13 by ting             ###   ########.fr       */
+>>>>>>> parent of fa2068b (its works now yaay, left with freeing)
 =======
 /*   Updated: 2024/03/12 15:19:13 by ting             ###   ########.fr       */
 >>>>>>> parent of fa2068b (its works now yaay, left with freeing)
@@ -68,11 +72,15 @@ int	main(int argc, char **argv)
 		big_stack_algor(stack_a, stack_b);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	free_stack(stack_a);
 	free_stack(stack_b);
 	free (stack_a);
 	free (stack_b);
 //	print_stack(stack_a);
+=======
+	print_stack(stack_a);
+>>>>>>> parent of fa2068b (its works now yaay, left with freeing)
 =======
 	print_stack(stack_a);
 >>>>>>> parent of fa2068b (its works now yaay, left with freeing)
