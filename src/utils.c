@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:58:22 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 15:58:56 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 18:54:05 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	find_smallest_num(t_stack *stack_a)
 {
-	t_stack *small_num;
+	t_stack	*small_num;
 
 	small_num = stack_a;
 	while (stack_a->next)
@@ -30,8 +30,9 @@ int	find_smallest_num(t_stack *stack_a)
 
 void	print_stack(t_stack **stack_a)
 {
-	t_stack *current = *stack_a;
+	t_stack	*current;
 
+	current = *stack_a;
 	while (current != NULL)
 	{
 		ft_printf("%i\n", current->data);
@@ -41,7 +42,7 @@ void	print_stack(t_stack **stack_a)
 
 int	get_stack_size(t_stack *stack_a)
 {
-	int     i;
+	int	i;
 
 	i = 0;
 	while ((stack_a) != NULL)
@@ -52,11 +53,12 @@ int	get_stack_size(t_stack *stack_a)
 	return (i);
 }
 
-//i can modify the stack directly by assign another variable, without changing the original sequence of the original stack
+//i can modify the stack directly by assign another variable,
+//without changing the original sequence of the original stack
 void	assign_pos(t_stack **stack)
 {
-	int     pos_num;
-	t_stack *current;
+	int		pos_num;
+	t_stack	*current;
 
 	current = NULL;
 	current = *stack;
@@ -69,16 +71,16 @@ void	assign_pos(t_stack **stack)
 	}
 }
 
-//The variable stack_size is use to assign the index to the list. It starts assigning from the biggest to smallest number
+//The variable stack_size is use to assign the index to the list.
+//It starts assigning from the biggest to smallest number
 
 void	assign_index(t_stack **stack_a)
 {
-	int	stack_size;
-	t_stack	*current;
+	int		stack_size;
 	long	num;
+	t_stack	*current;
 	t_stack	*highest;
 
-//	current = *stack_a;
 	stack_size = get_stack_size(*stack_a);
 	while (stack_size > 0)
 	{

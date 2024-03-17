@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:48:06 by ting              #+#    #+#             */
-/*   Updated: 2024/03/12 15:34:06 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 18:45:37 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 void	rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack *first_element;
+	t_stack	*first_element;
 
 	tmp = (*stack)->next;
 	first_element = *stack;

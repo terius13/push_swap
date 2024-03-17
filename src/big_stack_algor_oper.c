@@ -6,13 +6,14 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 11:55:08 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 15:19:25 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 18:23:42 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
+		int *cost__a, int *cost__b)
 {
 	while (*cost__a > 0 && *cost__b > 0)
 	{
@@ -22,7 +23,8 @@ void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *
 	}
 }
 
-void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
+		int *cost__a, int *cost__b)
 {
 	while (*cost__a > 0 && *cost__b > 0)
 	{
@@ -32,7 +34,8 @@ void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__
 	}
 }
 
-void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b,
+		int *cost__a, int *cost__b)
 {
 	while (*cost__a > 0 || *cost__b > 0)
 	{
@@ -49,7 +52,8 @@ void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost_
 	}
 }
 
-void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b,
+		int *cost__a, int *cost__b)
 {
 	while (*cost__a > 0 || *cost__b > 0)
 	{
@@ -69,9 +73,9 @@ void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, in
 void	get_cheapest_stack_into_pos(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
-	int	cheapest;
-	int	cost__a;
-	int	cost__b;
+	int		cheapest;
+	int		cost__a;
+	int		cost__b;
 
 	tmp = *stack_b;
 	cheapest = INT_MAX;
