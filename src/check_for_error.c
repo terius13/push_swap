@@ -6,11 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:28:52 by ting              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/17 14:55:33 by ting             ###   ########.fr       */
-=======
-/*   Updated: 2024/03/17 15:05:14 by ting             ###   ########.fr       */
->>>>>>> github
+/*   Updated: 2024/03/17 17:08:39 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +23,7 @@ void	ft_error_msg(void)
 	exit(1);
 }
 
-void	check_for_digit(char **argv)
+int	check_for_digit(char **argv)
 {
 	int	i;
 	int	j;
@@ -47,19 +43,20 @@ void	check_for_digit(char **argv)
 				j++;
 			else
 			{
-				ft_error_msg();
+				return (1);
 			}
 		}
 		num = ft_atol(argv[i]);
 		if (num > max_int || num < min_int)
 		{
-			ft_error_msg();
+			return (1);
 		}
 		i++;
 	}
+	return (0);
 }
 
-void	check_for_duplicates(char **argv)
+int	check_for_duplicates(char **argv)
 {
 	int	i;
 	int	j;
@@ -71,16 +68,24 @@ void	check_for_duplicates(char **argv)
 		while (argv[j] != NULL)
 		{
 			if (ft_strcmp(argv[i], argv[j]) == 0)
-				ft_error_msg();
+				return (1);
 			j++;
 		}
 		i++;
 	}
+	return (0);
 }
 
-void	checker_argv(char **argv)
+int	checker_argv(char **argv)
 {
+	int	checker_digit;
+	int	checker_dup;
 
-	check_for_digit(argv);
-	check_for_duplicates(argv);
+	checker_digit = 0;
+	checker_dup = 0;
+	checker_digit = check_for_digit(argv);
+	checker_dup = check_for_duplicates(argv);
+	if (checker_digit == 1 || checker_dup == 1)
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:58:22 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 14:54:46 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 15:58:56 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	assign_pos(t_stack **stack)
 	int     pos_num;
 	t_stack *current;
 
+	current = NULL;
 	current = *stack;
 	pos_num = 0;
 	while (current)

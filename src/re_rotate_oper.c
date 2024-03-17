@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 14:48:02 by ting              #+#    #+#             */
-/*   Updated: 2024/03/12 14:18:06 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 16:12:53 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void	reverse_rotate(t_stack **stack)
 	t_stack	*tmp;
 	t_stack *last_element;
 
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	last_element = NULL;
 	tmp = *stack;
 	while (tmp->next->next != NULL)
 	{

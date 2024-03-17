@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 14:51:15 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 17:08:58 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_stack
 {
 	struct s_stack	*next;
 	long			data;
-	long			pos;
-	long			index;
+	int			pos;
+	int			index;
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
@@ -49,7 +49,7 @@ void	assign_index(t_stack **stack_a);
 
 //alloc_stacka.c
 void	ft_freestr(char **lst);
-t_stack	*if_string(char *str);
+t_stack	**if_string(char *str);
 t_stack	**allocate_stack_a(int count, char **argv);
 
 //nodes_utils.c
@@ -58,9 +58,9 @@ void	add_node_bottom(t_stack **stack, t_stack *new);
 
 //check_for_error.c
 void	ft_error_msg(void);
-void	check_for_digit(char **argv);
-void	check_for_duplicates(char **argv);
-void	checker_argv(char **argv);
+int	check_for_digit(char **argv);
+int	check_for_duplicates(char **argv);
+int	checker_argv(char **argv);
 
 //swap_oper.c
 void	swap(t_stack **stack);
