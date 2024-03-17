@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-/*   Updated: 2024/03/14 22:25:04 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 13:50:59 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,21 +63,21 @@ t_stack		**if_string(char *str)
 		printf("xxxxxxx %p %s\n", strs[i], strs[i]);
 //		tmp = strs[i];
 		num = ft_atoi(strs[i]);
-		free (strs[i]); //giving invalid free
+//		free (strs[i]); //giving invalid free
 		add_node_bottom(stack_a,new_node(num));
 		i++;
 	//	free (strs[i]);
 	}
-	
-//	while (strs[j] != NULL)
-//	{
-//		printf("yyyyyyy %p %s\n", strs[j], strs[j]);
-//		free(strs[j]);
-//		j++;
-//	}
-	
+/*	
+	while (strs[j] != NULL)
+	{
+		printf("yyyyyyy %p %s\n", strs[j], strs[j]);
+		free(strs[j]);
+		j++;
+	}
+*/	
 //	ft_freestr(strs);
-	free (strs);
+//	free (strs);
 	return (stack_a);
 }	
 
@@ -90,8 +90,8 @@ t_stack		**allocate_stack_a(int count, char **argv)
 	i = 1;
 	num = 0;
 //	stack_a = (t_stack **)malloc(sizeof(t_stack *));
-//	if (!stack_a)
-//		return(NULL);
+	if (!stack_a)
+		return(NULL);
 	stack_a = NULL;
 	if (count < 2)
 	{

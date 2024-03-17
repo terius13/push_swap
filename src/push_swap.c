@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/15 11:29:10 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 14:28:14 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,15 @@ void	free_stack(t_stack **stack)
 	{
 		tmp = (*stack)->next;
 		printf("yyyyyyyyy %p %p\n", *stack, tmp);
+		(*stack)->data = 0;
+		(*stack)->pos = 0;
+		(*stack)->index = 0;
+		(*stack)->target_pos = 0;
+		(*stack)->cost_a = 0;
+		(*stack)->cost_b = 0;
 		free (*stack);
 //		*stack = NULL;
-		(*stack) = tmp;
+		*stack = tmp;
 	}
 	free (stack);
 //	stack = NULL;
@@ -59,7 +65,7 @@ int	main(int argc, char **argv)
 	else if (stack_size > 5)
 		big_stack_algor(stack_a, stack_b);
 	print_stack(stack_a);
-	free_stack(stack_a);
-	free (stack_b);
+//	free_stack(stack_a);
+//	free (stack_b);
 	return(0);
 }
