@@ -6,7 +6,11 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/14 20:45:01 by ting             ###   ########.fr       */
+=======
+/*   Updated: 2024/03/12 11:10:08 by ting             ###   ########.fr       */
+>>>>>>> parent of bb5fd04 (mem errors)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +41,6 @@ typedef struct s_stack
 	int				cost_b;
 }	t_stack;
 
-typedef struct s_data
-{
-	t_stack **stack_a;
-	t_stack **stack_b;
-} t_data;
-
 //push_swap.c
 void	free_stack(t_stack **stack);
 
@@ -54,8 +52,12 @@ void	assign_pos(t_stack **stack);
 void	assign_index(t_stack **stack_a);
 
 //alloc_stacka.c
+<<<<<<< HEAD
 void	ft_freestr(char **lst);
 t_stack	**if_string(char *str);
+=======
+t_stack	*if_string(char *str);
+>>>>>>> parent of bb5fd04 (mem errors)
 t_stack	**allocate_stack_a(int count, char **argv);
 
 //nodes_utils.c

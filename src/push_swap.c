@@ -6,7 +6,11 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/17 14:28:14 by ting             ###   ########.fr       */
+=======
+/*   Updated: 2024/03/13 11:55:19 by ting             ###   ########.fr       */
+>>>>>>> parent of bb5fd04 (mem errors)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +20,18 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
+<<<<<<< HEAD
 //	tmp = *stack;
 	if (!*stack)
+=======
+	tmp = *stack;
+	if (!stack || !*stack)
+>>>>>>> parent of bb5fd04 (mem errors)
 		return ;
 	while (*stack)
 	{
 		tmp = (*stack)->next;
+<<<<<<< HEAD
 		printf("yyyyyyyyy %p %p\n", *stack, tmp);
 		(*stack)->data = 0;
 		(*stack)->pos = 0;
@@ -35,6 +45,13 @@ void	free_stack(t_stack **stack)
 	}
 	free (stack);
 //	stack = NULL;
+=======
+		(*stack)->
+		free (*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
+>>>>>>> parent of bb5fd04 (mem errors)
 }
 
 int	main(int argc, char **argv)
@@ -43,6 +60,7 @@ int	main(int argc, char **argv)
 	t_stack **stack_b;
 	int	stack_size;
 
+<<<<<<< HEAD
 //	stack_b = NULL;
 //	stack_a = NULL;
 //	stack_a = (t_stack **)malloc(sizeof(t_stack *));
@@ -50,6 +68,10 @@ int	main(int argc, char **argv)
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_b)
 		return (1);
+=======
+	stack_b = (t_stack **)malloc(sizeof(t_stack *));
+	stack_a = allocate_stack_a(argc, argv);
+>>>>>>> parent of bb5fd04 (mem errors)
 	stack_size = get_stack_size(*stack_a);
 	print_stack(stack_a);	
 	if (stack_size == 3)
@@ -64,8 +86,16 @@ int	main(int argc, char **argv)
 		five_num_algor(stack_a, stack_b);
 	else if (stack_size > 5)
 		big_stack_algor(stack_a, stack_b);
+<<<<<<< HEAD
 	print_stack(stack_a);
 //	free_stack(stack_a);
 //	free (stack_b);
+=======
+	free_stack(stack_a);
+	free_stack(stack_b);
+	free (stack_a);
+	free (stack_b);
+//	print_stack(stack_a);
+>>>>>>> parent of bb5fd04 (mem errors)
 	return(0);
 }

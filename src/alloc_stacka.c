@@ -6,12 +6,17 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/17 13:50:59 by ting             ###   ########.fr       */
+=======
+/*   Updated: 2024/03/07 15:42:20 by ting             ###   ########.fr       */
+>>>>>>> parent of bb5fd04 (mem errors)
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+<<<<<<< HEAD
 void	ft_freestr(char **lst)
 {
 	char	*n;
@@ -28,6 +33,9 @@ void	ft_freestr(char **lst)
 }
 
 t_stack		**if_string(char *str)
+=======
+t_stack		*if_string(char *str)
+>>>>>>> parent of bb5fd04 (mem errors)
 {
 	t_stack	**stack_a;
 	char	**strs;
@@ -68,6 +76,7 @@ t_stack		**if_string(char *str)
 		i++;
 	//	free (strs[i]);
 	}
+<<<<<<< HEAD
 /*	
 	while (strs[j] != NULL)
 	{
@@ -80,6 +89,10 @@ t_stack		**if_string(char *str)
 //	free (strs);
 	return (stack_a);
 }	
+=======
+	return (*stack_a);
+}
+>>>>>>> parent of bb5fd04 (mem errors)
 
 t_stack		**allocate_stack_a(int count, char **argv)
 {
@@ -88,26 +101,36 @@ t_stack		**allocate_stack_a(int count, char **argv)
 	int	num;
 
 	i = 1;
+<<<<<<< HEAD
 	num = 0;
 //	stack_a = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_a)
 		return(NULL);
 	stack_a = NULL;
+=======
+	stack_a = (t_stack **)malloc(sizeof(t_stack *));
+	if (!stack_a)
+		return(NULL);
+	*stack_a = NULL;
+>>>>>>> parent of bb5fd04 (mem errors)
 	if (count < 2)
 	{
 		ft_error_msg();
 	}
 	else if (count == 2)
 	{
-		stack_a = if_string(argv[1]);
+		*stack_a = if_string(argv[1]);
 	}
 	else if (count > 2)
 	{
 		checker_argv(&argv[1]);
+<<<<<<< HEAD
 		stack_a = (t_stack **)malloc(sizeof(t_stack *));
 		if (!stack_a)
 			return (NULL);
 		*stack_a = NULL;
+=======
+>>>>>>> parent of bb5fd04 (mem errors)
 		while (i < count)
 		{
 			num = ft_atoi(argv[i]);
