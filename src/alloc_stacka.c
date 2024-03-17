@@ -6,22 +6,12 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*   Updated: 2024/03/17 13:50:59 by ting             ###   ########.fr       */
-=======
-/*   Updated: 2024/03/07 15:42:20 by ting             ###   ########.fr       */
->>>>>>> parent of bb5fd04 (mem errors)
-=======
-/*   Updated: 2024/03/07 15:42:20 by ting             ###   ########.fr       */
->>>>>>> parent of bb5fd04 (mem errors)
+/*   Updated: 2024/03/17 14:52:41 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 void	ft_freestr(char **lst)
 {
 	char	*n;
@@ -37,13 +27,7 @@ void	ft_freestr(char **lst)
 	*lst = NULL;
 }
 
-t_stack		**if_string(char *str)
-=======
 t_stack		*if_string(char *str)
->>>>>>> parent of bb5fd04 (mem errors)
-=======
-t_stack		*if_string(char *str)
->>>>>>> parent of bb5fd04 (mem errors)
 {
 	t_stack	**stack_a;
 	char	**strs;
@@ -84,28 +68,8 @@ t_stack		*if_string(char *str)
 		i++;
 	//	free (strs[i]);
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*	
-	while (strs[j] != NULL)
-	{
-		printf("yyyyyyy %p %s\n", strs[j], strs[j]);
-		free(strs[j]);
-		j++;
-	}
-*/	
-//	ft_freestr(strs);
-//	free (strs);
-	return (stack_a);
-}	
-=======
 	return (*stack_a);
 }
->>>>>>> parent of bb5fd04 (mem errors)
-=======
-	return (*stack_a);
-}
->>>>>>> parent of bb5fd04 (mem errors)
 
 t_stack		**allocate_stack_a(int count, char **argv)
 {
@@ -114,24 +78,10 @@ t_stack		**allocate_stack_a(int count, char **argv)
 	int	num;
 
 	i = 1;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	num = 0;
-//	stack_a = (t_stack **)malloc(sizeof(t_stack *));
-	if (!stack_a)
-		return(NULL);
-	stack_a = NULL;
-=======
-=======
->>>>>>> parent of bb5fd04 (mem errors)
 	stack_a = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_a)
 		return(NULL);
 	*stack_a = NULL;
-<<<<<<< HEAD
->>>>>>> parent of bb5fd04 (mem errors)
-=======
->>>>>>> parent of bb5fd04 (mem errors)
 	if (count < 2)
 	{
 		ft_error_msg();
@@ -143,16 +93,6 @@ t_stack		**allocate_stack_a(int count, char **argv)
 	else if (count > 2)
 	{
 		checker_argv(&argv[1]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-		stack_a = (t_stack **)malloc(sizeof(t_stack *));
-		if (!stack_a)
-			return (NULL);
-		*stack_a = NULL;
-=======
->>>>>>> parent of bb5fd04 (mem errors)
-=======
->>>>>>> parent of bb5fd04 (mem errors)
 		while (i < count)
 		{
 			num = ft_atoi(argv[i]);
