@@ -6,13 +6,13 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 16:39:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 18:36:23 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/12 14:17:43 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//pa(push a):Take the first element at the top of b and place at the top of a.
+//pa (push a): Take the first element at the top of b and put it at the top of a.
 //Do nothing if b is empty.
-//pb(push b):Take the first element at the top of a and place at the top of b.
+//pb (push b): Take the first element at the top of a and put it at the top of b.
 //Do nothing if a is empty.
 
 #include "../includes/push_swap.h"
@@ -26,7 +26,7 @@ void	push(t_stack **src, t_stack **dest)
 	tmp = (*src)->next;
 	(*src)->next = *dest;
 	*dest = *src;
-	*src = tmp;
+	*src = tmp; 
 }
 
 void	push_a(t_stack **stack_b, t_stack **stack_a)

@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 14:48:02 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 18:38:08 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/17 16:12:53 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack	*last_element;
+	t_stack *last_element;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -36,7 +36,6 @@ void	reverse_rotate(t_stack **stack)
 	last_element->next = *stack;
 	*stack = last_element;
 }
-
 void	re_rotate_a(t_stack **stack_a)
 {
 	reverse_rotate(stack_a);

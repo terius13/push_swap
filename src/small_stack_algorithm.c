@@ -6,12 +6,15 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:29:54 by ting              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/18 12:16:15 by ting             ###   ########.fr       */
+=======
+/*   Updated: 2024/03/08 16:59:22 by ting             ###   ########.fr       */
+>>>>>>> parent of b725697 (now need to refactor functions)
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 void	two_num_algor(t_stack **stack_a)
 {
 	int	first;
@@ -22,7 +25,6 @@ void	two_num_algor(t_stack **stack_a)
 	if (first > second)
 		swap_a(stack_a);
 }
-
 /*
 three_num_algor:
 Case 1: 2 1 3 -sa> 1 2 3
@@ -32,7 +34,6 @@ Case 4: 1 3 2 -sa> 3 1 2 -ra> 1 2 3
 Case 5: 3 2 1 -sa> 2 3 1 -rra> 1 2 3
 With every case, I compare top to middle, middle to bottom, and bottom to top.
 */
-
 void	three_num_algor(t_stack **stack_a)
 {
 	int	first;
@@ -60,12 +61,13 @@ void	three_num_algor(t_stack **stack_a)
 	}
 }
 
-//four_num_algor & five_num_algor:
-//The algor search for 1 smallest num in stack_a,2 smallest num if it five_num.
-//And it will push the smallest num over to stack_b, leaving 3 num in stack_a.
-//Three_num_algor will be called to sort the remaining three num in stack_a.
-//Then it will bring back the 1 or 2 smallest num back to stack_a.
-
+/*
+four_num_algor & five_num_algor:
+The algor will search for 1 smallest num in stack_a, 2 smallest num if it five_num_algor.
+And it will push the smallest num over to stack_b, leaving three num in stack_a.
+Three_num_algor will be called to sort the remaining three num in stack_a.
+Then it will bring back the 1 or 2 smallest num back to stack_a.
+*/
 void	four_num_algor(t_stack **stack_a, t_stack **stack_b)
 {
 	int	stack_size;
@@ -114,6 +116,11 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b)
 			small_num_pos = stack_size - small_num_pos;
 			while (small_num_pos-- > 0)
 				re_rotate_a(stack_a);
+<<<<<<< HEAD
+=======
+				small_num_pos--;
+			}	
+>>>>>>> parent of b725697 (now need to refactor functions)
 		}
 		push_b(stack_a, stack_b);
 		count--;

@@ -6,7 +6,11 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:45:23 by ting              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/18 13:08:34 by ting             ###   ########.fr       */
+=======
+/*   Updated: 2024/03/17 17:15:41 by ting             ###   ########.fr       */
+>>>>>>> parent of b725697 (now need to refactor functions)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +31,13 @@ void	ft_freestr(char **lst)
 	*lst = NULL;
 }
 
-t_stack	**if_string(char *str)
+t_stack		**if_string(char *str)
 {
 	t_stack	**stack_a;
 	char	**strs;
-	int		i;
-	int		j;
-	int		num;
+	int	i;
+	int	j;
+	int	num;
 
 	i = 0;
 	j = 0;
@@ -55,8 +59,9 @@ t_stack	**if_string(char *str)
 	*stack_a = NULL;
 	while (strs[i] != NULL)
 	{
+
 		num = ft_atoi(strs[i]);
-		add_node_bottom(stack_a, new_node(num));
+		add_node_bottom(stack_a,new_node(num));
 		i++;
 	}
 	ft_freestr(strs);
@@ -64,11 +69,11 @@ t_stack	**if_string(char *str)
 	return (stack_a);
 }
 
-t_stack	**allocate_stack_a(int count, char **argv)
+t_stack		**allocate_stack_a(int count, char **argv)
 {
-	t_stack	**stack_a;
-	int		i;
-	int		num;
+	t_stack **stack_a;
+	int	i;
+	int	num;
 
 	i = 1;
 	if (count < 2)
@@ -100,3 +105,4 @@ t_stack	**allocate_stack_a(int count, char **argv)
 	assign_index(stack_a);
 	return (stack_a);
 }
+

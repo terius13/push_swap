@@ -6,14 +6,22 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 11:55:08 by ting              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/03/18 12:40:34 by ting             ###   ########.fr       */
+=======
+/*   Updated: 2024/03/17 15:19:25 by ting             ###   ########.fr       */
+>>>>>>> parent of b725697 (now need to refactor functions)
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+<<<<<<< HEAD
 void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
 		int *cost_a, int *cost_b)
+=======
+void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+>>>>>>> parent of b725697 (now need to refactor functions)
 {
 	while (*cost_a > 0 && *cost_b > 0)
 	{
@@ -23,8 +31,12 @@ void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
 	}
 }
 
+<<<<<<< HEAD
 void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
 		int *cost_a, int *cost_b)
+=======
+void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+>>>>>>> parent of b725697 (now need to refactor functions)
 {
 	while (*cost_a > 0 && *cost_b > 0)
 	{
@@ -34,8 +46,12 @@ void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
 	}
 }
 
+<<<<<<< HEAD
 void	rotate_stack(t_stack **stack_a, t_stack **stack_b,
 		int *cost_a, int *cost_b)
+=======
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+>>>>>>> parent of b725697 (now need to refactor functions)
 {
 	while (*cost_a > 0 || *cost_b > 0)
 	{
@@ -52,8 +68,12 @@ void	rotate_stack(t_stack **stack_a, t_stack **stack_b,
 	}
 }
 
+<<<<<<< HEAD
 void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b,
 		int *cost_a, int *cost_b)
+=======
+void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b)
+>>>>>>> parent of b725697 (now need to refactor functions)
 {
 	while (*cost_a > 0 || *cost_b > 0)
 	{
@@ -73,9 +93,15 @@ void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b,
 void	get_cheapest_stack_into_pos(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*tmp;
+<<<<<<< HEAD
 	int		cheapest;
 	int		cost_a;
 	int		cost_b;
+=======
+	int	cheapest;
+	int	cost__a;
+	int	cost__b;
+>>>>>>> parent of b725697 (now need to refactor functions)
 
 	tmp = *stack_b;
 	cheapest = INT_MAX;
