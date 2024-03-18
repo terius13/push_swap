@@ -6,11 +6,23 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/18 13:58:01 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/18 19:12:22 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	check_if_stack_is_sorted(t_stack **stack_a)
+{
+	t_stack	*current = *stack_a;
+	while (current && current->next)
+	{
+		if (current->data > current->next->data)
+			return (1);
+		current = current->next;
+	}
+	return (0);
+}
 
 void	free_stack(t_stack **stack)
 {
@@ -34,7 +46,15 @@ int	main(int argc, char **argv)
 	t_stack	**stack_b;
 	int		stack_size;
 
+	if (argc < 2)
+		return (1);
 	stack_a = allocate_stack_a(argc, argv);
+	if (!check_if_stack_is_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free (stack_a);
+		return (0);
+	}
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_b)
 		return (1);

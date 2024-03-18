@@ -38,6 +38,7 @@ typedef struct s_stack
 }	t_stack;
 
 //push_swap.c
+int		check_if_stack_is_sorted(t_stack **stack_a);
 void	free_stack(t_stack **stack);
 
 //utils.c

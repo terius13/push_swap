@@ -64,7 +64,7 @@ t_stack	**allocate_stack_a(int count, char **argv)
 	i = 1;
 	if (count == 2)
 		stack_a = if_string(argv[1]);
-	else if (count < 2 || checker_argv(&argv[1]) == 1)
+	else if (checker_argv(&argv[1]) == 1)
 		ft_error_msg();
 	else if (count > 2)
 	{
