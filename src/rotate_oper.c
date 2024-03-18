@@ -21,7 +21,7 @@
 void	rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack *first_element;
+	t_stack	*first_element;
 
 	tmp = (*stack)->next;
 	first_element = *stack;

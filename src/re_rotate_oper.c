@@ -21,7 +21,7 @@
 void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
-	t_stack *last_element;
+	t_stack	*last_element;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
@@ -36,6 +36,7 @@ void	reverse_rotate(t_stack **stack)
 	last_element->next = *stack;
 	*stack = last_element;
 }
+
 void	re_rotate_a(t_stack **stack_a)
 {
 	reverse_rotate(stack_a);

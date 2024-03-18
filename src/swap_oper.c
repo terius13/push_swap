@@ -17,7 +17,7 @@
 void	swap(t_stack **stack)
 {
 	t_stack	*first;
-	t_stack *second;
+	t_stack	*second;
 
 	first = *stack;
 	second = (*stack)->next;

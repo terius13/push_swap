@@ -6,11 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/03/18 13:00:57 by ting             ###   ########.fr       */
-=======
-/*   Updated: 2024/03/17 17:12:59 by ting             ###   ########.fr       */
->>>>>>> parent of b725697 (now need to refactor functions)
+/*   Updated: 2024/03/18 13:58:01 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +26,7 @@ void	free_stack(t_stack **stack)
 		(*stack)->index = 0;
 		(*stack)->target_pos = 0;
 		(*stack)->cost_a = 0;
-		(*stack)->cost_b = 0;		
+		(*stack)->cost_b = 0;
 		free (*stack);
 		*stack = tmp;
 	}
@@ -40,20 +36,17 @@ void	free_stack(t_stack **stack)
 int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
-	t_stack **stack_b;
-	int	stack_size;
+	t_stack	**stack_b;
+	int		stack_size;
 
 	stack_a = allocate_stack_a(argc, argv);
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	if (!stack_b)
 		return (1);
-	*stack_b = NULL; //i was missing this line the whole fking time thats why
+	*stack_b = NULL;
 	stack_size = get_stack_size(*stack_a);
-//	print_stack(stack_a);	
 	if (stack_size == 3)
-	{
 		three_num_algor(stack_a);
-	}
 	else if (stack_size == 2)
 		two_num_algor(stack_a);
 	else if (stack_size == 4)
@@ -62,13 +55,8 @@ int	main(int argc, char **argv)
 		five_num_algor(stack_a, stack_b);
 	else if (stack_size > 5)
 		big_stack_algor(stack_a, stack_b);
-<<<<<<< HEAD
-	print_stack(stack_a);
-=======
-//	print_stack(stack_a);
->>>>>>> parent of b725697 (now need to refactor functions)
 	free_stack(stack_a);
 	free (stack_a);
 	free (stack_b);
-	return(0);
+	return (0);
 }
