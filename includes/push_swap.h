@@ -103,14 +103,14 @@ void	assign_target_pos(t_stack **stack_a, t_stack **stack_b);
 void	mv_smallest_num_to_top(t_stack **stack_a);
 
 //big_stack_algor_oper.c
-void    reverse_or_rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
+void	reverse_or_rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
 			int *cost_a, int *cost_b);
 void	rotate_stack(t_stack **stack_a, t_stack **stack_b,
 			int *cost__a, int *cost__b);
 void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b,
 			int *cost__a, int *cost__b);
-void    do_moves(t_stack **stack_a, t_stack **stack_b,
-		int cost_a, int cost_b);
+void	do_moves(t_stack **stack_a, t_stack **stack_b,
+			int cost_a, int cost_b);
 void	get_cheapest_stack_into_pos(t_stack **stack_a, t_stack **stack_b);
 
 #endif

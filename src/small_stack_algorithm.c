@@ -65,6 +65,7 @@ void	four_num_algor(t_stack **stack_a, t_stack **stack_b)
 	int	stack_size;
 	int	small_num_pos;
 
+	assign_pos(stack_a);
 	stack_size = get_stack_size(*stack_a);
 	small_num_pos = find_smallest_num(*stack_a);
 	if (small_num_pos < (stack_size / 2))
@@ -96,18 +97,25 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b)
 	int	count;
 
 	count = 2;
+	assign_pos(stack_a);
 	while (count > 0)
 	{
 		small_num_pos = find_smallest_num(*stack_a);
 		stack_size = get_stack_size(*stack_a);
 		if (small_num_pos < (stack_size / 2))
-			while (small_num_pos-- > 0)
+			while (small_num_pos > 0)
+			{
 				rotate_a(stack_a);
+				small_num_pos--;
+			}
 		else if (small_num_pos >= (stack_size / 2))
 		{
 			small_num_pos = stack_size - small_num_pos;
-			while (small_num_pos-- > 0)
+			while (small_num_pos > 0)
+			{
 				re_rotate_a(stack_a);
+				small_num_pos--;
+			}
 		}
 		push_b(stack_a, stack_b);
 		count--;

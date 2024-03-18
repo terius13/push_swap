@@ -22,11 +22,6 @@ void	free_stack(t_stack **stack)
 	while (*stack)
 	{
 		tmp = (*stack)->next;
-		(*stack)->data = 0;
-		(*stack)->index = 0;
-		(*stack)->target_pos = 0;
-		(*stack)->cost_a = 0;
-		(*stack)->cost_b = 0;
 		free (*stack);
 		*stack = tmp;
 	}

@@ -14,7 +14,7 @@
 
 void	ft_error_msg(void)
 {
-	perror("Error");
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }
 
@@ -71,8 +71,6 @@ int	checker_argv(char **argv)
 	int	checker_digit;
 	int	checker_dup;
 
-	checker_digit = 0;
-	checker_dup = 0;
 	checker_digit = check_for_digit(argv);
 	checker_dup = check_for_duplicates(argv);
 	if (checker_digit == 1 || checker_dup == 1)

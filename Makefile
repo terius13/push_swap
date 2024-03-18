@@ -6,7 +6,7 @@
 #    By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 11:09:54 by ting              #+#    #+#              #
-#    Updated: 2024/03/12 15:18:56 by ting             ###   ########.fr        #
+#    Updated: 2024/03/18 16:06:39 by ting             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,6 @@ SRC = alloc_stacka.c push_swap.c \
       big_stack_algor_oper.c
 
 OBJ = $(addprefix $(SRC_PATH), $(SRC:.c=.o))
-
-#OBJS_RM = $(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME) 
 
