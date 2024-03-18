@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:25:50 by ting              #+#    #+#             */
-/*   Updated: 2024/03/18 15:09:50 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/18 20:33:34 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_stack
 //push_swap.c
 int		check_if_stack_is_sorted(t_stack **stack_a);
 void	free_stack(t_stack **stack);
+void	choose_algorithm(t_stack **stack_a, t_stack **stack_b);
 
 //utils.c
 int		find_smallest_num(t_stack *stack_a);

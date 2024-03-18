@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:54:01 by ting              #+#    #+#             */
-/*   Updated: 2024/03/18 19:12:22 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/18 20:38:56 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	check_if_stack_is_sorted(t_stack **stack_a)
 {
-	t_stack	*current = *stack_a;
+	t_stack	*current;
+
+	current = *stack_a;
 	while (current && current->next)
 	{
 		if (current->data > current->next->data)
@@ -40,6 +42,23 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
+void	choose_algorithm(t_stack **stack_a, t_stack **stack_b)
+{
+	int	stack_size;
+
+	stack_size = get_stack_size(*stack_a);
+	if (stack_size == 2)
+		two_num_algor(stack_a);
+	else if (stack_size == 3)
+		three_num_algor(stack_a);
+	else if (stack_size == 4)
+		four_num_algor(stack_a, stack_b);
+	else if (stack_size == 5)
+		five_num_algor(stack_a, stack_b);
+	else if (stack_size > 5)
+		big_stack_algor(stack_a, stack_b);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
@@ -59,17 +78,7 @@ int	main(int argc, char **argv)
 	if (!stack_b)
 		return (1);
 	*stack_b = NULL;
-	stack_size = get_stack_size(*stack_a);
-	if (stack_size == 3)
-		three_num_algor(stack_a);
-	else if (stack_size == 2)
-		two_num_algor(stack_a);
-	else if (stack_size == 4)
-		four_num_algor(stack_a, stack_b);
-	else if (stack_size == 5)
-		five_num_algor(stack_a, stack_b);
-	else if (stack_size > 5)
-		big_stack_algor(stack_a, stack_b);
+	choose_algorithm(stack_a, stack_b);
 	free_stack(stack_a);
 	free (stack_a);
 	free (stack_b);
