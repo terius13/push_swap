@@ -30,8 +30,8 @@ typedef struct s_stack
 {
 	struct s_stack	*next;
 	long			data;
-	int			pos;
-	int			index;
+	int				pos;
+	int				index;
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
@@ -58,9 +58,9 @@ void	add_node_bottom(t_stack **stack, t_stack *new);
 
 //check_for_error.c
 void	ft_error_msg(void);
-int	check_for_digit(char **argv);
-int	check_for_duplicates(char **argv);
-int	checker_argv(char **argv);
+int		check_for_digit(char **argv);
+int		check_for_duplicates(char **argv);
+int		checker_argv(char **argv);
 
 //swap_oper.c
 void	swap(t_stack **stack);
@@ -100,13 +100,17 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b);
 void	big_stack_algor(t_stack **stack_a, t_stack **stack_b);
 void	push_all_until_three_left(t_stack **stack_a, t_stack **stack_b);
 void	assign_target_pos(t_stack **stack_a, t_stack **stack_b);
-void    mv_smallest_num_to_top(t_stack **stack_a);
+void	mv_smallest_num_to_top(t_stack **stack_a);
 
 //big_stack_algor_oper.c
-void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b);
-void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b);
-void	rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b);
-void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b, int *cost__a, int *cost__b);
+void	rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
+			int *cost__a, int *cost__b);
+void	reverse_rotate_both_stack(t_stack **stack_a, t_stack **stack_b,
+			int *cost__a, int *cost__b);
+void	rotate_stack(t_stack **stack_a, t_stack **stack_b,
+			int *cost__a, int *cost__b);
+void	reverse_rotate_stack(t_stack **stack_a, t_stack **stack_b,
+			int *cost__a, int *cost__b);
 void	get_cheapest_stack_into_pos(t_stack **stack_a, t_stack **stack_b);
 
 #endif

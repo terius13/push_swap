@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 16:29:54 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 18:49:09 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/18 12:16:15 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,21 +107,13 @@ void	five_num_algor(t_stack **stack_a, t_stack **stack_b)
 		small_num_pos = find_smallest_num(*stack_a);
 		stack_size = get_stack_size(*stack_a);
 		if (small_num_pos < (stack_size / 2))
-		{
-			while (small_num_pos > 0)
-			{
+			while (small_num_pos-- > 0)
 				rotate_a(stack_a);
-				small_num_pos--;
-			}
-		}
 		else if (small_num_pos >= (stack_size / 2))
 		{
 			small_num_pos = stack_size - small_num_pos;
-			while (small_num_pos > 0)
-			{
+			while (small_num_pos-- > 0)
 				re_rotate_a(stack_a);
-				small_num_pos--;
-			}
 		}
 		push_b(stack_a, stack_b);
 		count--;

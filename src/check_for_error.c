@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:28:52 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 18:29:02 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/18 12:22:14 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ int	check_for_digit(char **argv)
 {
 	int			i;
 	int			j;
-	long int	max_int;
-	long int	min_int;
 	long		num;
 
 	i = 0;
-	max_int = 2147483647;
-	min_int = -2147483648;
 	while (argv[i] != NULL)
 	{
 		j = 0;
@@ -46,7 +42,7 @@ int	check_for_digit(char **argv)
 				return (1);
 		}
 		num = ft_atol(argv[i]);
-		if (num > max_int || num < min_int)
+		if (num > 2147483647 || num < -2147483648)
 			return (1);
 		i++;
 	}

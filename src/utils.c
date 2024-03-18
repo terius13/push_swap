@@ -6,7 +6,7 @@
 /*   By: ting <ting@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:58:22 by ting              #+#    #+#             */
-/*   Updated: 2024/03/17 18:54:05 by ting             ###   ########.fr       */
+/*   Updated: 2024/03/18 12:12:55 by ting             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	assign_index(t_stack **stack_a)
 	{
 		current = *stack_a;
 		num = -2147483648;
-		highest = NULL;
 		while (current != NULL)
 		{
 			if ((current->data == num) && (current->index == 0))
